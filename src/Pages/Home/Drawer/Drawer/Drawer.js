@@ -14,7 +14,6 @@ import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import {
-    BrowserRouter,
     Switch,
     Route,
     useRouteMatch

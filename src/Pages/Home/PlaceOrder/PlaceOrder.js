@@ -17,7 +17,7 @@ const PlaceOrder = () => {
             .then(data => {
                 setProduct(data)
             })
-    }, [])
+    }, [id])
     const onSubmit = data => {
         axios.post('https://immense-crag-91398.herokuapp.com/myorder',data)
          .then(res => {

@@ -11,13 +11,13 @@ const useFirebase = () => {
   const [admin , setAdmin] = useState(false)
 
 
-  const Googleprovider = new GoogleAuthProvider
+  const Googleprovider = new GoogleAuthProvider()
   const auth = getAuth()
 
   const googleSignIn = (location, history) => {
     signInWithPopup(auth, Googleprovider)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
                 saveUser(user.email, user.displayName, 'PUT');
                 setAuthError('');
@@ -48,7 +48,6 @@ const useFirebase = () => {
           })
           .catch((error) => {
               setAuthError(error.message);
-              console.log(error);
           })
           .finally(() => setLoading(false));
   }
@@ -62,7 +61,7 @@ const useFirebase = () => {
             history.replace(destination);
     
             setAuthError('')
-            const user = userCredential.user;
+            // const user = userCredential.user;
             // ...
           })
           .catch((error) => {
@@ -85,7 +84,7 @@ const useFirebase = () => {
           setLoading(false)
         });
         return () => unsubscribe
-      }, [])
+      }, [auth])
 
 
       //logout opearation

@@ -12,7 +12,7 @@ const MyOrder = () => {
             .then(data => {
                 setOrder(data)
             })
-    }, [])
+    }, [user.email])
 
     const handleDelete = id => {
         const url = `https://immense-crag-91398.herokuapp.com/myorder/${id}`
@@ -23,7 +23,6 @@ const MyOrder = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
 
                     if (data.deletedCount > 0) {
 
@@ -42,7 +41,7 @@ const MyOrder = () => {
                 {
                     order.map(booking => <li className='d-flex justify-content-between border-1 border border-secondary m-3 w-25' key={booking._id}>
 
-                        {booking.place}
+                        {booking?.product}
                         {booking ?
                             <button className='btn-info' onClick={() => handleDelete(booking._id)}>delete</button>
                             : <p></p>}

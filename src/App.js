@@ -27,12 +27,12 @@ function App() {
         <BrowserRouter>
           <NavBar></NavBar>
           <Switch>
-            <Route exact path='/'>
+            <PrivateRoute exact path='/'>
               <Home></Home>
-            </Route>
-            <Route path='/home'>
+            </PrivateRoute>
+            <PrivateRoute path='/home'>
               <Home></Home>
-            </Route>
+            </PrivateRoute>
             <Route path='/login'>
               <Login></Login>
             </Route>

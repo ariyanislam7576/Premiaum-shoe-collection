@@ -12,7 +12,6 @@ const ManageProduct = () => {
     }, [])
     const handleDelete = id => {
         const url = `https://immense-crag-91398.herokuapp.com/addproduct/${id}`
-        console.log(url);
         const procced = window.confirm('are you sure??')
         if (procced) {
             fetch(url, {
@@ -20,7 +19,6 @@ const ManageProduct = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
 
                     if (data.deletedCount > 0) {
 

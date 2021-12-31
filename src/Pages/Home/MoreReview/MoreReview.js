@@ -9,7 +9,6 @@ const MoreReview = () => {
     fetch('https://immense-crag-91398.herokuapp.com/addreview')
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setReview(data)
       })
   }, [])

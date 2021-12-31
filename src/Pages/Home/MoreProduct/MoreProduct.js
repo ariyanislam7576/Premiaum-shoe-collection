@@ -8,7 +8,6 @@ const MoreProduct = () => {
         fetch('https://immense-crag-91398.herokuapp.com/addproduct')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setProduct(data)
             })
     }, [])
